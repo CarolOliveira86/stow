@@ -101,12 +101,18 @@ function App() {
     return bandas.size
   }, [vinis])
 
+
+  const limparBusca = () => {
+    setSearchTerm("")
+  }
+
   return (
     <div className="app-wrapper">
 
       <header className="header-hero">
-        <span className="hero-pill">🎵 Acervo Oficial de Vinis</span>
-        <h1 className="hero-title">De Volta Para o Vinil</h1>
+        <h1 className="hero-title">
+          <img src="/logo.png" alt="De Volta Para o Vinil" className="hero-logo" />
+        </h1>
         <p className="hero-subtitle">
           Catálogo completo carregado em tempo real a partir do JSON no GitHub.
         </p>
@@ -138,9 +144,10 @@ function App() {
           />
           {searchTerm && (
             <button
+              type="button"
               className="clear-btn"
               title="Limpar busca"
-              onClick={() => setSearchTerm("")}
+              onClick={limparBusca}
             >
               ✕
             </button>
@@ -189,11 +196,21 @@ function App() {
       {!loading && !error && vinisFiltrados.length === 0 && (
         <div className="status-container">
           <p style={{ fontSize: "1.2rem", marginBottom: "8px" }}>
-            Nenhum vinil encontrado para a busca "{searchTerm}".
+            Nenhum Vinil encontrado para a busca "{searchTerm}".
           </p>
-          <p style={{ color: "var(--text-muted)" }}>
-            Tente pesquisar por outro nome de artista, gênero ou ano.
+          <p style={{ color: "var(--text-muted)", marginBottom: "16px" }}>
+            Tente pesquisar por outro Nome de Artista, Gênero ou Ano.
           </p>
+          {searchTerm && (
+            <button
+              type="button"
+              className="load-more-btn"
+              style={{ maxWidth: "200px", margin: "0 auto" }}
+              onClick={limparBusca}
+            >
+              Limpar busca
+            </button>
+          )}
         </div>
       )}
 
@@ -262,12 +279,12 @@ function App() {
                           {vendedor}
                         </span>
                       </div>
-                      <div className="spec-item">
+                      {/* <div className="spec-item">
                         <span className="spec-label">Qtd</span>
                         <span className="spec-value">
                           {item.QUANTIDADE !== undefined ? item.QUANTIDADE : 1} un.
                         </span>
-                      </div>
+                      </div> */}
                     </div>
 
                   
