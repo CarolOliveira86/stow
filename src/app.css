@@ -49,7 +49,7 @@ body {
 
 
 
-.hero-title {
+.hero-title {  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,14 +57,11 @@ body {
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin-bottom: 12px;
+  src: url('../src/logo.png');  
 }
 
-.hero-title img,
-.hero-logo {  
+.hero-title img {  
   max-width: 100%;
   width: clamp(280px, 45vw, 460px);
   height: auto;
@@ -74,8 +71,7 @@ body {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.hero-title img:hover,
-.hero-logo:hover {
+.hero-title img:hover{
   transform: scale(1.02);
   filter: drop-shadow(0 8px 26px rgba(245, 158, 11, 0.4));
 }

@@ -9,8 +9,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ totalDiscos, totalBandas, loading }) => {
   return (
     <header className="header-hero">
-      <h1 className="hero-title">
-        <img src="/logo.png" alt="De Volta Para o Vinil" className="hero-logo" />
+      <h1 className="hero-title">        
       </h1>
       <p className="hero-subtitle">
         Registro do acervo de vinis. Desde 2008
